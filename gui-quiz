@@ -1,0 +1,72 @@
+
+
+package quiz;
+
+
+import javax.swing.JOptionPane; 
+
+public class Quiz {
+
+	
+	// notes from assignment
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		// Create a String called "question" and initialize it to the question you want to ask. Use the
+		//characters "\n" to start a new line
+		//Add multiple choices starting with "A", "B", "C", "D", and "E"
+		//using the "+=" operator and "\n"
+        String question="How many days in a week?\n";
+        question += "A. seven\n";
+        question += "B. one \n";
+        question += "C. three \n";
+        question += "D. five \n";
+        question += "E. six \n";
+
+
+        // Move the statements that record the answer and 
+        //display a response into a while loop.
+        while(true)
+        {
+        	
+            String answer = JOptionPane.showInputDialog(question);
+          
+            if(answer==null){
+            	//Use "break" or "return" to exit the 
+            	//loop when the answer is correct.
+            	break;
+            }
+            // Change the answer to upper case so 
+            //lower-case input works.
+            answer=answer.toUpperCase();
+            
+              
+            if (answer.equals("A")) {
+            //Use an if statement to check the answer and 
+            	//display a message if it is correct  
+            JOptionPane.showMessageDialog(null,"Correct!");
+            break;
+            }
+            // It should display a different message if the answer 
+            //is valid ("A", "B", "C", "D", or "E") but
+            //incorrect, like "Incorrect. Please try again."
+            else if (answer.equals("B")|| answer.equals("C")|| answer.equals("A")|| answer.equals("E")) {
+            JOptionPane.showMessageDialog(null,"Incorrect. Please try again");
+
+
+            }
+           else{/* It should display a third message if the answer is invalid (
+           anything other than single characters
+        	   "A", "B", "C", "D", and "E"), like "Invalid answer. Please enter A, B, C, D, or E."*/
+        	   
+           JOptionPane.showMessageDialog(null,"\"Invalid answer. Please enter A, B, C, D, or E.\"");
+            }
+ 
+        }
+ 
+        
+    }
+    
+}
